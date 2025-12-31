@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Firdaus Bakery & Cake</title>
+    <link rel="icon" type="image/png" href="assets/image/logo.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec9213",
+                        "background-light": "#ffffff",
+                        "background-dark": "#221a10",
+                        "background-alt-light": "#fffaf0",
+                        "background-alt-dark": "#2d2316",
+                        "text-main": "#1b160d",
+                        "text-muted": "#9a794c",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 font-display transition-colors duration-200">
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-50 w-full border-b border-gray-100 bg-background-light/95 backdrop-blur-sm dark:border-gray-800 dark:bg-background-dark/95">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <img src="assets/image/logo.png" alt="firdaus_bakery_cake">
+                    <span class="text-xl font-bold tracking-tight text-text-main dark:text-white">Firdaus Bakery &
+                        Cake</span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium text-text-main hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors"
+                        href="#home">Home</a>
+                    <a class="text-sm font-medium text-text-main hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors"
+                        href="#about">About Us</a>
+                    <a class="text-sm font-medium text-text-main hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors"
+                        href="#menu">Menu</a>
+                    <a class="text-sm font-medium text-text-main hover:text-primary dark:text-gray-200 dark:hover:text-primary transition-colors"
+                        href="#location">Location</a>
+                </div>
+                <!-- CTA -->
+                <div class="flex items-center gap-4">
+                    <button id="order-now-btn"
+                        class="hidden md:flex h-10 items-center justify-center rounded-lg bg-primary px-5 text-sm font-bold text-white shadow-sm transition-all hover:bg-primary/90 hover:shadow-md active:scale-95">
+                        Order Now
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="flex md:hidden items-center justify-center text-text-main dark:text-white">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+
+                    <div id="mobile-menu"
+                        class="hidden md:hidden absolute top-16 left-0 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 shadow-lg">
+                        <div class="flex flex-col p-4 space-y-4">
+                            <a class="mobile-nav-link text-lg font-medium text-text-main dark:text-gray-200"
+                                href="#home">Home</a>
+                            <a class="mobile-nav-link text-lg font-medium text-text-main dark:text-gray-200"
+                                href="#about">About Us</a>
+                            <a class="mobile-nav-link text-lg font-medium text-text-main dark:text-gray-200"
+                                href="#menu">Menu</a>
+                            <a class="mobile-nav-link text-lg font-medium text-text-main dark:text-gray-200"
+                                href="#location">Location</a>
+                            <button id="mobile-order-btn"
+                                class="w-full h-12 rounded-lg bg-primary text-white font-bold shadow-sm">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section
+        class="relative flex min-h-[600px] w-full items-center justify-center overflow-hidden bg-background-alt-light dark:bg-background-alt-dark"
+        id="home">
+        <div class="absolute inset-0 z-0">
+            <div class="h-full w-full bg-cover bg-center bg-no-repeat"
+                data-alt="Close up of freshly baked artisan bread on a wooden table"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPRZagScISvOnosK1Ja1oeIKqqiVNEdecj7yTvNsX-_mgnEGtvUwmDNMVg-Q3YDmzwF9L6mnQcTv7q00Z1QSOQLd3-RRJj_HAgdEAEhB1oc9_xoRJX4q5gGKLltPvt3um4RBGzMSj1PLrvHGHwUzCqbwSm4fvh9Zc3hXfjIPzGt5t0f9IjyjI2JK3NxRX1jqz7pQXQT4o0ZxTQnsFyEwr9ypQlr38giWJpw5nQbgXHbb_3X_8qdEAWY_PkXPNcZ8wKV5MgdKBm");'>
+            </div>
+        </div>
+        <div class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+            <h1
+                class="mb-4 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                Sentuhan Surga, di Setiap<br class="hidden sm:block" /> Gigitan.
+            </h1>
+            <p class="mx-auto mb-8 max-w-2xl text-lg font-medium text-gray-200 sm:text-xl">
+                Dibuat dengan sepenuh hati dan dipanggang sempurna menggunakan resep otentik dan bahan premium untuk
+                pengalaman rasa yang istimewa.
+            </p>
+            <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <a class="flex h-12 min-w-[160px] items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white shadow-lg transition-all hover:bg-primary/90 hover:-translate-y-0.5"
+                    href="#menu">
+                    Lihat Menu
+                </a>
+                <a class="flex h-12 min-w-[160px] items-center justify-center rounded-lg bg-white/10 px-6 text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+                    href="#location">
+                    Temukan Kami
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section class="py-20 bg-background-light dark:bg-background-dark" id="about">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+                <div class="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3]">
+                    <div class="h-full w-full bg-cover bg-center transition-transform hover:scale-105 duration-700"
+                        data-alt="Baker kneading dough in a warm kitchen"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3LkBux88EufBjaLx9LXfMZ8MXbvHA6CbCf0Sa4GqeFimn4rPxNnD2kGhIPil6yxWRIyE721rNL3LHkEDI9jBGgw-6UF_kjPeF7h91ZfIp_mMFpv-ovG4Z0yuyerdOZzFHlSss776dSMxImMNn9Ee3_9fDZ0m8jSTGNY50ya5QM0QOIi1Mn8my9PPLEfIP19wL2yCGwt1g2HQAjx_ehS9qa_CwtLDBre2DzDoAjWx5pzMegI6vfrb-Dj8wfCII82EGiux2ljTe");'>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="mb-2 text-sm font-bold uppercase tracking-wider text-primary">Our Story</span>
+                    <h2 class="mb-6 text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">
+                        Traditional Baking with a Modern Touch
+                    </h2>
+                    <p class="mb-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+                        Didirikan pada tahun 2015, Firdaus Bakery & Cake menghadirkan kehangatan kue tradisional ke
+                        lingkungan Anda. Kami percaya pada keajaiban bahan-bahan sederhana: tepung, air, garam, dan
+                        waktu.
+                    </p>
+                    <p class="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+                        Ragi sourdough kami telah dipelihara selama lebih dari satu dekade, memberikan cita rasa dan
+                        tekstur khas pada roti kami. Setiap pagi, tim kami bangun sebelum fajar untuk memastikan Anda
+                        mendapatkan awal hari yang paling segar.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="material-symbols-outlined rounded-full bg-primary/10 p-2 text-primary">eco</span>
+                            <span class="font-semibold text-text-main dark:text-white">Organic Flour</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="material-symbols-outlined rounded-full bg-primary/10 p-2 text-primary">schedule</span>
+                            <span class="font-semibold text-text-main dark:text-white">Baked Daily</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="material-symbols-outlined rounded-full bg-primary/10 p-2 text-primary">favorite</span>
+                            <span class="font-semibold text-text-main dark:text-white">Handmade</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="material-symbols-outlined rounded-full bg-primary/10 p-2 text-primary">local_cafe</span>
+                            <span class="font-semibold text-text-main dark:text-white">Great Coffee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Catalog Section -->
+    <section class="py-20 bg-background-alt-light dark:bg-background-alt-dark" id="menu">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 text-center">
+                <span class="mb-2 text-sm font-bold uppercase tracking-wider text-primary">Our Menu</span>
+                <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">Fresh From The
+                    Oven</h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Handcrafted daily for the perfect bite.</p>
+            </div>
+            <!-- Categories -->
+            <div class="mb-10 flex flex-wrap justify-center gap-4">
+                <button
+                    class="rounded-full bg-primary px-6 py-2 text-sm font-bold text-white shadow-md transition-transform hover:scale-105">All</button>
+            </div>
+            <!-- Grid -->
+            <div id="menu-container" class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <!-- Card 1 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Rustic sourdough loaf on a dark surface"
+                            style='background-image: url("assets/image/rotiTawar.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Roti Tawar</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                11.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Naturally leavened with a crispy,
+                            tangy crust.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Golden brown croissants stacked"
+                            style='background-image: url("assets/image/rotiManis.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Roti Manis</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                6.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Flaky, buttery layers baked to golden
+                            perfection.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Chocolate muffin with chocolate chips"
+                            style='background-image: url("assets/image/rotiBuaya.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Roti Buaya</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                6.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Classic recipe with a crisp crust and
+                            soft interior.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Long french baguette bread"
+                            style='background-image: url("assets/image/blackForest.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Black Forest</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                120.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Rich Belgian chocolate chunks in a
+                            moist crumb.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Colorful fruit tart with berries"
+                            style='background-image: url("assets/image/bolu.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Bolu</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                40.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Custard cream topped with fresh
+                            seasonal berries.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Cinnamon roll with cream cheese frosting"
+                            style='background-image: url("assets/image/nastar.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Nastar</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                60.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Warm, gooey roll glazed with rich
+                            cream cheese.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Cinnamon roll with cream cheese frosting"
+                            style='background-image: url("assets/image/kastengel.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Kastengel</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                75.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Buttery, savory cheese cookies baked
+                            to golden perfection, crispy on the outside with a rich, cheesy melt in every bite.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Cinnamon roll with cream cheese frosting"
+                            style='background-image: url("assets/image/rainbowCake.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Rainbow Cake</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                45.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Soft, fluffy layers of colorful cake
+                            with a light, sweet flavor, creating a fun and delightful treat in every slice.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 9 -->
+                <div
+                    class="group relative flex flex-col overflow-hidden rounded-xl bg-background-light shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-background-dark dark:ring-1 dark:ring-gray-800">
+                    <div class="aspect-square w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Cinnamon roll with cream cheese frosting"
+                            style='background-image: url("assets/image/brownies.jpeg");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                        <div class="flex items-start justify-between">
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">Brownies</h3>
+                            <span class="rounded bg-primary/10 px-2 py-1 text-xs font-bold text-primary">Rp.
+                                52.000</span>
+                        </div>
+                        <p class="mt-2 text-sm text-text-muted dark:text-gray-400">Rich, fudgy brownies with a deep
+                            chocolate flavor, soft and moist inside, perfectly baked for a melt-in-your-mouth
+                            experience.</p>
+                        <div class="mt-auto pt-4">
+                            <button
+                                class="flex w-full items-center justify-center gap-2 rounded-lg border border-primary bg-transparent py-2 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 text-center md:hidden"> 
+                    <button id="show-more-btn"
+                        class="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-white">
+                        <span id="btn-text">Lihat Selengkapnya</span>
+                        <span id="btn-icon" class="material-symbols-outlined">expand_more</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Operational Info & Location Section -->
+    <section class="py-20 bg-background-light dark:bg-background-dark" id="location">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-10 lg:flex-row">
+                <!-- Info Side -->
+                <div class="flex-1 lg:pr-10">
+                    <span class="mb-2 text-sm font-bold uppercase tracking-wider text-primary">Visit Us</span>
+                    <h2 class="mb-8 text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">
+                        Operational Information
+                    </h2>
+                    <div class="space-y-8">
+                        <!-- Hours -->
+                        <div class="flex gap-4">
+                            <div
+                                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                <span class="material-symbols-outlined text-2xl">schedule</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-text-main dark:text-white">Opening Hours</h3>
+                                <div class="mt-2 space-y-1 text-gray-600 dark:text-gray-300">
+                                    <div class="flex justify-between gap-8">
+                                        <span>Senin - Minggu</span>
+                                        <span class="font-medium">6:00 AM - 10:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Location -->
+                        <div class="flex gap-4">
+                            <div
+                                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                <span class="material-symbols-outlined text-2xl">location_on</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-text-main dark:text-white">Our Location</h3>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">
+                                    Perumahan Taman Raya Citayam Jl. Edenia No.20 Blok E1, Rw. Panjang,<br />
+                                    Kecamatan Bojonggede, Kabupaten Bogor, Jawa Barat 16320
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Contact -->
+                        <div class="flex gap-4">
+                            <div
+                                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                <span class="material-symbols-outlined text-2xl">call</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-text-main dark:text-white">Contact Us</h3>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">
+                                    Punya permintaan khusus? Kirim pesan kepada kami kapan saja.
+                                </p>
+                                <a class="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-[#128C7E] transition-colors w-fit"
+                                    href="https://wa.me/1234567890?text=Hi,%20I'd%20like%20to%20place%20an%20order">
+                                    <span class="material-symbols-outlined">chat</span>
+                                    Order via WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Map Side -->
+                <div class="h-[400px] w-full flex-1 overflow-hidden rounded-2xl shadow-lg bg-gray-200 lg:h-auto">
+                    <div class="w-full h-full bg-gray-300 relative">
+                        <!-- Static Map Placeholder Image -->
+                        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                            data-alt="Map showing location of The Golden Crust in New York City"
+                            data-location="New York City" style='background-color: #f0f0f0;'>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4232053250626!2d106.80861947399251!3d-6.467951993523684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c206b00edbf3%3A0x9e88a48df6f3a458!2sJl.%20Edenia%20No.20%20Blok%20E1%2C%20Rw.%20Panjang%2C%20Kecamatan%20Bojonggede%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016320!5e0!3m2!1sen!2sid!4v1766975118903!5m2!1sen!2sid"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-background-alt-dark text-white pt-16 pb-8">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <img src="assets/image/logo.png" alt="firdaus bakery">
+                        <span class="text-xl font-bold tracking-tight">Firdaus Bakery & Cake</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Menciptakan kebahagiaan melalui kue sejak 2015. Resep otentik, bahan organik, dan banyak sekali
+                        cinta.
+
+                    </p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="#home">Home</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#menu">Menu</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#about">About Us</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#location">Location</a></li>
+                    </ul>
+                </div>
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-primary hover:text-white"
+                            href="https://www.facebook.com/firdausbakeryandcake/">
+                            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-primary hover:text-white"
+                            href="https://www.instagram.com/firdausbakeryandcake?igsh=MWY4MGtnNmkwM3Q2bg==">
+                            <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path clip-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.527c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2025 Firdaus Bakery & Cake. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification-container" class="fixed bottom-5 right-5 z-[100] flex flex-col gap-3"></div>
+
+    <div id="cart-drawer" class="fixed inset-0 z-[100] hidden">
+        <div id="cart-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+        <div
+            class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl dark:bg-background-dark p-6 flex flex-col">
+            <div class="flex items-center justify-between border-b pb-4 dark:border-gray-700">
+                <h2 class="text-xl font-bold flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">shopping_basket</span>
+                    Your Orders
+                </h2>
+                <button id="close-cart" class="text-gray-500 hover:text-red-500 transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+
+            <div id="cart-items-list" class="flex-1 overflow-y-auto py-4 space-y-4">
+            </div>
+
+            <div class="border-t pt-4 dark:border-gray-700">
+                <div class="flex justify-between items-center mb-4 text-lg font-bold">
+                    <span>Total Estimasi:</span>
+                    <span id="cart-total-price" class="text-primary">0.00</span>
+                </div>
+                <button id="whatsapp-final-btn"
+                    class="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-all active:scale-95 shadow-lg">
+                    <span class="material-symbols-outlined">chat</span>
+                    Kirim Pesanan ke WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
